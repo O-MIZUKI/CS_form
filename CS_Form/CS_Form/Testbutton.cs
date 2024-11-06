@@ -23,7 +23,7 @@ namespace CS_Form
             Click += Oneclick;
 
             // ボタン内に文字を表示させる
-            Text = "(=^・・^=)"+ID.ToString();
+            Text = ID.ToString();
 
             Console.Write(Text);
 
