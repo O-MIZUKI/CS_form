@@ -17,11 +17,13 @@ namespace CS_Form
             InitializeComponent();
            
             for (int cnt = 0; cnt < 10; cnt++)
-            {
-                
-                Testbutton testbutton = new Testbutton((cnt% 3) * 100,(cnt/3) * 100, 100, 100,cnt);
+            {                
+                Testbutton testbutton = new Testbutton((cnt% 5) * 100,(cnt/5) * 100, 100, 100,cnt);
                 Controls.Add(testbutton);
             }
+
+            TestLabel testLabel = new TestLabel("label",10,200,50,50); 
+            Controls.Add(testLabel);
         }
     }
 }
