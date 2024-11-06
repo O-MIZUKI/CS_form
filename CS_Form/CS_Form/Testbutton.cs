@@ -17,16 +17,16 @@ namespace CS_Form
         /// コンストラクタ
         /// クラスを生成したときに呼び出される
         /// </samary>
-        public Testbutton(Form1 form1,int x, int y,int width,int height,string a)
+        public Testbutton(Form1 form1,int x, int y,int width,int height,int cnt)
         {
             _form1 = form1;
 
             // クリックイベントにOnclick関数を登録
             // ボタンをクリックしたときに登録した関数を実行させます
             Click += Onclick;
-
+            string[] a = new string[10] { "a", "s", "d", "f", "g", "h", "j", "k", "l", ";" };
             // ボタン内に文字を表示させる
-            Text = a;
+            Text = a[cnt];
 
             Console.Write(Text);
 

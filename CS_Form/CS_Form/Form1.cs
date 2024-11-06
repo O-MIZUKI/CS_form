@@ -18,13 +18,12 @@ namespace CS_Form
         {
             InitializeComponent();
 
-            string a = "l";
+            
 
             for (int cnt = 0; cnt < 10; cnt++)
             {
-                Testbutton testbutton = new Testbutton(this, (cnt % 5) * 100, (cnt / 5) * 100, 100, 100, a);
+                Testbutton testbutton = new Testbutton(this,(cnt % 5) * 100, (cnt / 5) * 100, 100, 100,cnt);
                 Controls.Add(testbutton);
-                a = a + a;
             }
 
             _testLabel = new TestLabel("label", 10, 200, 50, 50);
