@@ -10,20 +10,23 @@ using System.Windows.Forms;
 namespace CS_Form
 {
     internal class Testbutton : Button
+    {
+        Form1 _form1;
 
         /// <samary>
         /// コンストラクタ
         /// クラスを生成したときに呼び出される
         /// </samary>
-    {
-        public Testbutton(int x, int y,int width,int height,int ID)
+        public Testbutton(Form1 form1,int x, int y,int width,int height,string a)
         {
-            // クリックイベントにOneclick関数を登録
+            _form1 = form1;
+
+            // クリックイベントにOnclick関数を登録
             // ボタンをクリックしたときに登録した関数を実行させます
-            Click += Oneclick;
+            Click += Onclick;
 
             // ボタン内に文字を表示させる
-            Text = ID.ToString();
+            Text = a;
 
             Console.Write(Text);
 
@@ -34,9 +37,9 @@ namespace CS_Form
 
         }
 
-        public void Oneclick(object sender, EventArgs s)
+        public void Onclick(object sender, EventArgs s)
         {
-            MessageBox.Show(Text);
+            _form1.LabelTextUpdate(Text);
         }
     }
 }
