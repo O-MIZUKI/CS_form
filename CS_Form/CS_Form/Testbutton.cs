@@ -12,21 +12,22 @@ namespace CS_Form
     internal class Testbutton : Button
     {
         Form1 _form1;
+        TestTextBox _testBox;
 
         /// <samary>
         /// コンストラクタ
         /// クラスを生成したときに呼び出される
         /// </samary>
-        public Testbutton(Form1 form1,int x, int y,int width,int height,int cnt)
+        public Testbutton(Form1 form1,int x, int y,int width,int height,string str)
         {
             _form1 = form1;
 
             // クリックイベントにOnclick関数を登録
             // ボタンをクリックしたときに登録した関数を実行させます
             Click += Onclick;
-            string[] a = new string[10] { "a", "s", "d", "f", "g", "h", "j", "k", "l", ";" };
+            
             // ボタン内に文字を表示させる
-            Text = a[cnt];
+            Text = str;
 
             Console.Write(Text);
 
@@ -37,9 +38,18 @@ namespace CS_Form
 
         }
 
+        
         public void Onclick(object sender, EventArgs s)
         {
-            _form1.LabelTextUpdate(Text);
+            string currentButtonText = Text;
+
+            Text = _form1._testBox.Text;
+
+            _form1._testBox.Text = currentButtonText;
+
+            _form1.LabelTextUpdate(currentButtonText);
+            _form1.BoxTextUpdate(currentButtonText);
+            
         }
     }
 }
